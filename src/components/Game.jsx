@@ -60,7 +60,9 @@ const Game = () => {
   // Handler for when timer runs out
   const handleTimeUp = () => {
     navigate(
-      `/result?score=${score}&total=${questions.length * 10}&category=${categoryId}&reason=timeout`
+      `/result?score=${score}&total=${
+        questions.length * 10
+      }&category=${categoryId}&reason=timeout`
     );
   };
 
@@ -89,7 +91,9 @@ const Game = () => {
     } else {
       // Navigate to results when quiz is complete
       navigate(
-        `/result?score=${score}&total=${questions.length * 10}&category=${categoryId}&reason=completed`
+        `/result?score=${score}&total=${
+          questions.length * 10
+        }&category=${categoryId}&reason=completed`
       );
     }
   };
@@ -152,7 +156,7 @@ const Game = () => {
             </span>
           </div>
           <button
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/dashboard", { replace: true })}
             className="bg-white bg-opacity-30 backdrop-blur-sm text-black px-6 py-3 rounded-full font-semibold hover:bg-opacity-40 transition-all hover:shadow-lg"
           >
             Quit Quiz
